@@ -1,8 +1,8 @@
 package com.aesopwow.subsubclipclop.controller;
 
 import com.aesopwow.subsubclipclop.domain.api.service.ApiService;
-import com.aesopwow.subsubclipclop.domain.dbinfo.dto.DbInfoResponseDto;
-import com.aesopwow.subsubclipclop.domain.dbinfo.service.DbInfoService;
+import com.aesopwow.subsubclipclop.domain.infodb.dto.InfoDbResponseDto;
+import com.aesopwow.subsubclipclop.domain.infodb.service.InfoDbService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/dbInfo")
 @RequiredArgsConstructor
-public class DbInfoController {
-    private final DbInfoService dbInfoService;
+public class InfoDbController {
+    private final InfoDbService infoDbService;
     private final ApiService apiService;
 
-    @GetMapping("/{dbInfoNo}")
-    public ResponseEntity<DbInfoResponseDto> getDbInfo(
-            @PathVariable Long dbInfoNo) {
-        DbInfoResponseDto dbInfoResponseDto = dbInfoService.getDbInfo(dbInfoNo);
+    @GetMapping("/{infoDbNo}")
+    public ResponseEntity<InfoDbResponseDto> getInfoDb(
+            @PathVariable Long infoDbNo) {
+        InfoDbResponseDto infoDbResponseDto = infoDbService.getInfoDb(infoDbNo);
 
-        return ResponseEntity.ok(dbInfoResponseDto);
+        return ResponseEntity.ok(infoDbResponseDto);
     }
 
     @GetMapping("/ext/{company_no}")

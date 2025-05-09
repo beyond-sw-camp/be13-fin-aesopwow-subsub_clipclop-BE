@@ -2,7 +2,7 @@ package com.aesopwow.subsubclipclop.domain.requirelist.service;
 
 import com.aesopwow.subsubclipclop.domain.analysis.repository.AnalysisRepository;
 import com.aesopwow.subsubclipclop.domain.company.repository.CompanyRepository;
-import com.aesopwow.subsubclipclop.domain.dbinfo.repository.DbInfoRepository;
+import com.aesopwow.subsubclipclop.domain.infodb.repository.InfoDbRepository;
 import com.aesopwow.subsubclipclop.domain.requirelist.dto.RequireListRequestDto;
 import com.aesopwow.subsubclipclop.domain.requirelist.dto.RequireListResponseDto;
 import com.aesopwow.subsubclipclop.domain.requirelist.repository.RequireListRepository;
@@ -22,7 +22,7 @@ public class RequireListServiceImpl implements RequireListService {
     private final RequireListRepository requireListRepository;
     private final CompanyRepository companyRepository;
     private final AnalysisRepository analysisRepository;
-    private final DbInfoRepository dbInfoRepository;
+    private final InfoDbRepository infoDbRepository;
 
     @Override
     @Transactional(readOnly = true)
@@ -42,7 +42,7 @@ public class RequireListServiceImpl implements RequireListService {
         Company company = companyRepository.findById(requireListRequestDto.getCompanyNo())
                 .orElseThrow(() -> new CustomException(ErrorCode.COMPANY_NOT_FOUND));
 
-        DbInfo dbInfo = dbInfoRepository.findById(requireListRequestDto.getDbInfoNo())
+        DbInfo dbInfo = infoDbRepository.findById(requireListRequestDto.getDbInfoNo())
                 .orElseThrow(() -> new CustomException(ErrorCode.DB_INFO_NOT_FOUND));
 
         RequireList requireList = RequireList.builder()

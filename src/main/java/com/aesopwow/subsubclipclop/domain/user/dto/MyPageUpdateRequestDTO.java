@@ -14,7 +14,6 @@ import lombok.Setter;
 public class MyPageUpdateRequestDTO {
     private Long userNo;
     private String username;
-//    private String departmentName;
     private Long payment;
     private String InfoDb;
 }

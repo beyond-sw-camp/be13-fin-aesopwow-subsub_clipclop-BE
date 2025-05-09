@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyPageController {
     private final MyPageService myPageService;
 
-    // 마이페이지 조회
     @GetMapping("")
     @Operation(summary = "마이페이지 유저 정보 조회", description = "현재 로그인한 유저의 마이페이지 정보를 조회한다.")
     @ApiResponses({
@@ -50,7 +49,6 @@ public class MyPageController {
         return ResponseEntity.ok(new BaseResponseDto<>(HttpStatus.OK, myPageInfo));
     }
 
-    // 마이페이지 수정
     @PutMapping
     public ResponseEntity<BaseResponseDto<MyPageResponseDTO>> updateMyPageInfo(
             @Valid @RequestBody MyPageUpdateRequestDTO myPageUpdateRequestDTO) {

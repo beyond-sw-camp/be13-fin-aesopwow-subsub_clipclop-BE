@@ -1,12 +1,12 @@
 package com.aesopwow.subsubclipclop.controller;
 
+import com.aesopwow.subsubclipclop.domain.infodb.repository.InfoDbRepository;
 import com.aesopwow.subsubclipclop.entity.Company;
 import com.aesopwow.subsubclipclop.entity.InfoDb;
 import com.aesopwow.subsubclipclop.entity.Payment;
 import com.aesopwow.subsubclipclop.domain.common.dto.BaseResponseDto;
 import com.aesopwow.subsubclipclop.domain.company.dto.CompanyUpdateRequestDTO;
 import com.aesopwow.subsubclipclop.domain.company.service.CompanyService;
-import com.aesopwow.subsubclipclop.domain.info_db.repository.InfoDbRepository;
 import com.aesopwow.subsubclipclop.domain.payment.repository.PaymentRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

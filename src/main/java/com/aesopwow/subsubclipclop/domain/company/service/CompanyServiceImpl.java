@@ -5,7 +5,6 @@ import com.aesopwow.subsubclipclop.entity.InfoDb;
 import com.aesopwow.subsubclipclop.entity.Payment;
 import com.aesopwow.subsubclipclop.domain.company.dto.CompanyUpdateRequestDTO;
 import com.aesopwow.subsubclipclop.domain.company.repository.CompanyRepository;
-import com.aesopwow.subsubclipclop.domain.info_db.repository.InfoDbRepository;
 import com.aesopwow.subsubclipclop.domain.payment.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

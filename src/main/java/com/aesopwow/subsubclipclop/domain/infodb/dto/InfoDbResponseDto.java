@@ -1,4 +1,4 @@
-package com.aesopwow.subsubclipclop.domain.dbinfo.dto;
+package com.aesopwow.subsubclipclop.domain.infodb.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DbInfoResponseDto {
+public class InfoDbResponseDto {
     private Long dbInfoNo;
     private Long companyNo;
     private String name;

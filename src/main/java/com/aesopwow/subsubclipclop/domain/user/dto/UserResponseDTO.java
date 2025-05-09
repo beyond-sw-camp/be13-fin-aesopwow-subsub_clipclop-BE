@@ -7,7 +7,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class UserResponseDTO {
-    // 직원 조회
     private Long userNo;
     private String username;
     private String departmentName;
