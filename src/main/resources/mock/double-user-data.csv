@@ -1,0 +1,12 @@
+userId,name,age,country,subscription,watchTimeHours,favoriteGenre,lastLogin
+101,Tom,34,US,Basic,55,다큐,2024-04-22
+102,혜린,22,KR,Premium,42,영화,2024-04-21
+103,박희진,28,KR,Ultimate,30,로맨스,2024-04-19
+104,Jane,26,US,Basic,25,영화,2024-04-18
+105,John,29,US,Premium,95,예능,2024-04-26
+---
+106,김수현,38,KR,Ultimate,38,예능,2024-04-20
+107,Alice,31,US,Basic,65,코미디,2024-04-23
+108,김민수,45,KR,Premium,120,다큐,2024-04-17
+109,Emily,27,CA,Ultimate,70,공포,2024-04-25
+110,이수진,32,KR,Basic,100,드라마,2024-04-27
