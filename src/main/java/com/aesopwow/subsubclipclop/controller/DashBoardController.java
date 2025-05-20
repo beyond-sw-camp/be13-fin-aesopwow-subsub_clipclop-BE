@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DashBoardController {
     private final ApiService apiService;
 
-    @ExceptionHandler
+//    @ExceptionHandler
     @GetMapping("/{infoDbNo}")
     public ResponseEntity<ApiResponseDto> getDashBoardCSV(
             @PathVariable(required = true) String infoDbNo) {

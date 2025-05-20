@@ -41,11 +41,11 @@ public class ApiServiceImpl implements ApiService {
     }
 
     @Override
-    public byte[] getAnalysisResult(String filename) {
+    public byte[] getAnalysisResult(String infoDbNo) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/python-api/analysis")
-                        .queryParam("file_name", filename)
+                        .queryParam("infoDbNo", infoDbNo)
                         .build()
                 )
                 .accept(MediaType.APPLICATION_OCTET_STREAM)
