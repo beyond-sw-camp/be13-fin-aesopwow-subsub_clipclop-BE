@@ -3,10 +3,13 @@ os: linux
 
 files:
   - source: build/libs/subsubclipclop-0.0.1-SNAPSHOT.jar
-    destination: /home/ec2-user/app
+    destination: /home/ec2-user/app/build/libs
 
   - source: scripts/
     destination: /home/ec2-user/app/scripts
+
+  - source: .env
+    destination: /home/ec2-user/app
 
 hooks:
   ApplicationStop:
@@ -21,5 +24,3 @@ hooks:
     - location: scripts/start.sh
       timeout: 60
       runas: ec2-user
-
-

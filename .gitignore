@@ -24,6 +24,8 @@ out/
 *.iws
 .shelf
 
+.env
+
 .settings/
 .classpath
 .project
