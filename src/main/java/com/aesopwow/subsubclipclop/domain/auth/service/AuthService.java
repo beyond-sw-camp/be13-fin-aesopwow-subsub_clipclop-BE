@@ -43,12 +43,19 @@ public class AuthService {
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new BadCredentialsException("유효하지 않은 이메일입니다."));
 
+        // 🔒 탈퇴 계정인지 확인
+        if (user.getIsDeleted()) {
+            throw new BadCredentialsException("탈퇴한 계정입니다.");
+        }
+
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new BadCredentialsException("비밀번호가 일치하지 않습니다.");
         }
 
-        String accessToken  = jwtTokenProvider.createAccessToken(user.getEmail(),
-                user.getRole().getName().toString());
+        String accessToken  = jwtTokenProvider.createAccessToken(
+                user.getEmail(),
+                user.getRole().getName().toString()
+        );
         String refreshToken = jwtTokenProvider.createRefreshToken(user.getEmail());
 
         return new TokenResponseDto(accessToken, refreshToken);
