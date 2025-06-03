@@ -8,6 +8,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -57,12 +58,15 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @Value("${cors.allowed-origins}") // ✅ WebConfig와 동일한 값 주입
+    private String allowedOrigins;
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://dagudok-service.com", "http://localhost:5173", "http://127.0.0.1:3000", "https://api.dagudok-service.com"));
+        config.setAllowedOrigins(List.of(allowedOrigins, "http://127.0.0.1:3000","https://dagudok-service.com", "http://localhost:5173", "http://127.0.0.1:3000", "https://api.dagudok-service.com"));
 //        config.setAllowedOrigins(List.of("*"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 
